@@ -22,7 +22,16 @@ var main = function () {
                 services: $('#services'),
                 about: $('#about'),
                 portfolio: $('#portfolio'),
-                contacts: $('#contacts')
+                contacts: $('#contacts'),
+                getContentBlocks: function (section) {
+                    var target = section.children('.content-block');
+                    return {
+                        box: $(target),
+                        caption: target.children('.caption'),
+                        content: target.children('.content'),
+                        tagLine: target.children('#tagline')
+                    };
+                }
             }
         },
         responsive = function () {
@@ -61,6 +70,18 @@ var main = function () {
             main.sections.start.css({
                 'width': fullWidth,
                 'height': fullHeight
+            });
+            var startContent = main.sections.getContentBlocks(main.sections.start);
+            startContent.box.css({
+                'height': line(12.5),
+                'width': fullWidth
+            });
+            startContent.tagLine.css({
+                'font-size': line(2.5)
+            });
+            startContent.tagLine.children('.underline').css({
+                'height': line(0.2),
+                'width': vert(1.25)
             });
         };
 

@@ -21,8 +21,9 @@
 <main>
     <section id="start" class="content-section">
         <div class="content-block">
-            <h1 id="tagline">Do let professionals to code.
-                <div class="underline"></div>
+            <h1 id="tagline">
+                <span class="name">Do let professionals to code.</span>
+                <span class="underline"></span>
             </h1>
         </div>
     </section>
