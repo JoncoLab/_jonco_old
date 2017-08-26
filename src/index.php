@@ -33,7 +33,7 @@
             </h2>
             <article class="content">
                 <div class="big-letter">
-                    <span class="letter"></span>
+                    <span class="letter">s</span>
                     <div class="line"></div>
                 </div>
                 <div class="text">
@@ -54,26 +54,76 @@
             </article>
         </div>
         <div class="content-block" id="visualization">
-            <figure>
+            <figure id="development">
                 <figcaption>Development</figcaption>
                 <div class="line"></div>
                 <span class="ico"></span>
             </figure>
-            <figure>
-                <figcaption>Development</figcaption>
+            <figure id="support">
+                <figcaption>Support</figcaption>
                 <div class="line"></div>
                 <span class="ico"></span>
             </figure>
-            <figure>
-                <figcaption>Development</figcaption>
+            <figure id="expansion">
+                <figcaption>Improvement & Expansion</figcaption>
                 <div class="line"></div>
                 <span class="ico"></span>
             </figure>
         </div>
     </section>
-    <section id="about" class="content-section"></section>
-    <section id="portfolio" class="content-section"></section>
-    <section id="contacts" class="content-section"></section>
+    <section id="about" class="content-section">
+        <h2 class="caption">
+            <span class="name">About us</span>
+            <span class="ico">☺</span>
+        </h2>
+        <article class="content">
+            <img id="about-visual" src="images/jonco-planet.png">
+            <div class="text">
+                <p class="text-block">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec quam est, porta ut faucibus nec, aliquam at nisl.
+                    Donec vitae lacinia ante. Etiam sollicitudin, nunc nec malesuada imperdiet, justo justo condimentum diam, eget gravida odio mi vitae tortor.
+                </p>
+                <p class="text-block">
+                    Praesent eros purus, suscipit et nibh at, fermentum iaculis nibh.
+                    Quisque fringilla, nulla sit amet convallis laoreet, massa mi posuere elit, quis laoreet orci enim at purus.
+                    Quisque tempus ex ut erat ornare, sit amet ultricies erat suscipit.
+                </p>
+            </div>
+            <div class="big-letter">
+                <span class="letter">a</span>
+                <div class="line"></div>
+            </div>
+        </article>
+    </section>
+    <section id="portfolio" class="content-section">
+        <h2 class="caption">
+            <span class="name">Our clients</span>
+            <span class="ico">☺</span>
+        </h2>
+        <div class="gallery">
+            <img id="ztsb" src="images/jonco-logo2.png" alt="Transkarpathian Universal Stock Exchange">
+            <img id="th-upizol" src="images/jonco-logo2.png" alt="Ukrpromizoliatsia Trade House">
+            <img id="ier" src="images/jonco-logo2.png" alt="International Relations Faculty of Uzhgorod National University">
+        </div>
+    </section>
+    <section id="contacts" class="content-section">
+        <h2 class="caption">
+            <span class="name">Our clients</span>
+            <span class="ico">☺</span>
+        </h2>
+        <div class="content">
+            <form id="feedback-form">
+                <label for="name">Send us an email:</label>
+                <input id="name" name="name" placeholder="Your name" required>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <input name="subject" id="subject" placeholder="Subject" required>
+                <textarea name="message" id="message" style="resize: none;" placeholder="Your message"></textarea>
+                <input type="submit">
+                <label for="submit">Send</label>
+            </form>
+        </div>
+    </section>
 </main>
 </body>
 </html>
