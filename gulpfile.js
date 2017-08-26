@@ -119,12 +119,12 @@ gulp.task('php:build', function () {
 gulp.task('js:build', function () {
     gulp.src(path.src.js)
         .pipe(connectToFtp.newer(path.ftp.js))
-        .pipe(jsMinify({
-            ext: {
-                min: '.js'
-            },
-            noSource: '*.js'
-        }))
+        // .pipe(jsMinify({
+        //     ext: {
+        //         min: '.js'
+        //     },
+        //     noSource: '*.js'
+        // }))
         .pipe(connectToFtp.dest(path.ftp.js))
         .pipe(gulp.dest(path.build.js));
 });
