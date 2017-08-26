@@ -1,9 +1,58 @@
-@mixin bigLetter($color: white) {
-  color: $color;
+@mixin bigLetter($color: $main, $bg-color: $main) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .letter {
+    display: inline-block;
+    font: {
+      family: $fontOpenSans;
+      size: $line * 35;
+    }
+    color: $color;
+    line-height: 1;
+    text: {
+      transform: uppercase;
+    }
+  }
+
+  .line {
+    width: $line / 2;
+    height: $line * 8;
+    background: {
+      color: $bg-color;
+    }
+  }
 }
 
-@mixin caption($planetColor: white) {
+@mixin secCap ($flex: flex-end) {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: $flex;
+}
 
+@mixin capName ($color: #3300ff) {
+  color: $color;
+  font: {
+    size: $line * 5;
+    family: $fontSansCond;
+    weight: normal;
+  }
+  text: {
+    transform: uppercase;
+  }
+  letter-spacing: 0.05px;
+}
+
+@mixin joncoPlanet ($color: $main, $amount: 0 0 0 0) {
+  margin: $amount;
+  color: $color;
+  font: {
+    size: $line * 5;
+    family: Ico;
+    weight: normal;
+  }
 }
 
 @mixin textBlock($color) {

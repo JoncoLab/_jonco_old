@@ -31,7 +31,7 @@ body {
       color: black;
     }
     z-index: 1000;
-    box-shadow: 0 $line / 4 $line / 2 0 white;
+    box-shadow: 0 $line / 4 0 0 white;
     transition: {
       duration: $time;
       timing-function: linear;
@@ -57,7 +57,7 @@ body {
           transform: uppercase;
         }
         font: {
-          family: $fontOSans;
+          family: $fontSansCond;
           size: $line;
         }
         word-break: keep-all;
@@ -104,7 +104,7 @@ body {
           padding: 0;
           margin: 0;
           font: {
-            family: $fontOSans;
+            family: $fontOpenSans;
             size: $line * 4;
             weight: normal;
           }
@@ -125,6 +125,12 @@ body {
 
     #services {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: {
+        color: transparentize(black, 0.7);
+      }
 
       #description {
         width: 100%;
@@ -133,128 +139,104 @@ body {
         }
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-
-        .content,
-        .caption {
-          width: 70%;
-        }
+        justify-content: flex-start;
 
         .caption {
-          margin: $line * 2 0 0 0;
-          padding: 0;
-          font: {
-            weight: normal;
-          }
-          text-align: right;
+          @include secCap(flex-end);
 
           .name {
-            font: {
-              size: $line * 4;
-              family: $fontOSans;
-            }
-            color: white;
+            @include capName(white);
           }
 
           .ico {
-            color: $main;
-            font: {
-              family: Ico;
-              size: $line * 5;
-            }
+            @include joncoPlanet($main, 0 0 0 $line * 2);
           }
         }
 
         .content {
+          width: 70%;
           display: flex;
-          align-items: center;
-          border: 1px solid red;
+          align-items: flex-start;
 
           .big-letter {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            text-align: left;
-            margin: 0 $line * 2 0 0;
-
-            .letter {
-              display: block;
-              flex-shrink: 1;
-              padding: 0;
-              margin: 0 0 $line * -7 0;
-              font: {
-                family: $fontOSans;
-                size: $line * 40;
-              }
-              color: $main;
-              text: {
-                transform: uppercase;
-              }
-            }
-
-            .line {
-              flex-grow: 1;
-              width: $line / 2;
-              height: $line * 15;
-              background: {
-                color: $main;
-              }
-            }
+            @include bigLetter($main);
           }
 
           .text {
+            align-self: flex-start;
             display: flex;
             flex-direction: column;
-
-            .text-block:nth-of-type(even) {
-              align-self: flex-end;
-            }
+            justify-content: flex-start;
 
             .text-block:nth-last-of-type(odd) {
               align-self: flex-start;
+              text-align: left;
+            }
+
+            .text-block:nth-of-type(even) {
+              align-self: flex-end;
+              text-align: right;
             }
 
             .text-block {
-              flex-grow: 1;
               color: white;
-              width: 50%;
+              width: 70%;
               font: {
-                family: $fontOSans;
-                size: $line * 2;
+                family: $fontSansCond;
+                size: $line * 1.8;
               }
-              line-height: $line * 2.5;
             }
           }
         }
       }
 
       #visualization {
-        border: 1px solid red;
         width: 70%;
+        height: $line * 42;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
 
         figure {
+          flex-basis: 30%;
+          padding: 0;
+          margin: 0;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
 
           figcaption {
             color: white;
             font: {
-              family: $fontOSans;
-              size: $line * 4;
+              family: $fontSansCond;
+              size: $line * 2.6;
               weight: normal;
             }
+            letter-spacing: 1.5px;
           }
 
           .line {
+            margin: $line 0;
+            width: 2px;
+            height: $line * 7.5;
             background: {
               color: white;
             }
           }
 
           .ico {
+            display: block;
+            width: $line * 10;
+            height: $line * 10;
+            border: {
+              style: solid;
+              width: 1px;
+              color: white;
+              radius: 50%;
+            }
             color: white;
           }
         }
