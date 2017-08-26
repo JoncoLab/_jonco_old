@@ -197,8 +197,7 @@ gulp.task('project:build', [
 gulp.task('watch', function () {
     gulp.watch(path.watch.pages, [
         'html:build',
-        'fonts:build',
-        'assets:build'
+        'fonts:build'
     ]);
     gulp.watch(path.watch.styles, ['css:build']);
     gulp.watch(path.watch.scripts, [
