@@ -12,46 +12,49 @@ body {
 }
 
 body {
+  background: {
+    image: url("../images/bg-2.png");
+    position: center;
+    attachment: fixed;
+    repeat: no-repeat;
+  }
 
   header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: $line * 8;
-    padding: 0 15%;
+    height: 15%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     background: {
       color: black;
     }
 
-    * {
-      border: 1px solid red;
-    }
-
     #logo {
       display: block;
-      width: 15%;
-      margin: 0;
+      margin: 0 0 0 15%;
       padding: 0;
+      width: 20%;
+      align-self: center;
     }
 
     #menu {
-      flex-grow: 1;
+      margin: 0 15% 0 0;
+      max-width: 60%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
 
       .menu-item {
-        padding: $line / 2 0;
         color: white;
+        padding: $line;
         text: {
           decoration: none;
           transform: uppercase;
         }
         font: {
           family: Helvatica, sans-serif;
-          size: $line * 1.8;
-          weight: bold;
         }
         transition: {
           duration: $time;
@@ -61,6 +64,54 @@ body {
         &.current,
         &:hover {
           color: $main;
+        }
+      }
+    }
+  }
+
+  main {
+
+    #start {
+      border: 1px solid red;
+      width: 100%;
+      height: $line * 80;
+      display: flex;
+      align-items: center;
+
+      .content-block {
+        @include contentBlock($color: transparent);
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: $line * 20;
+        background: {
+          image: url("../images/bg.png");
+          position: center;
+          size: auto 100%;
+          repeat: no-repeat;
+        }
+
+        #tagline {
+          position: relative;
+          color: black;
+          padding: 0;
+          margin: 0;
+          font: {
+            family: Open Sans, sans-serif;
+            size: $line * 4;
+            weight: normal;
+          }
+
+          .underline  {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: $line * 8;
+            height: $line / 4;
+            background: {
+              color: black;
+            }
+          }
         }
       }
     }
