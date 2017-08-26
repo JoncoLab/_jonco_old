@@ -109,7 +109,7 @@
     </section>
     <section id="contacts" class="content-section">
         <h2 class="caption">
-            <span class="name">Our clients</span>
+            <span class="name">Contact us</span>
             <span class="ico">☺</span>
         </h2>
         <div class="content">
@@ -122,6 +122,28 @@
                 <input type="submit">
                 <label for="submit">Send</label>
             </form>
+            <ul id="contacts-list">
+                <li class="contacts-item" id="tel">
+                    <span class="ico">☺</span>
+                    <span class="contact">Tel</span>
+                </li>
+                <li class="contacts-item" id="mail">
+                    <span class="ico">☺</span>
+                    <span class="contact">Email</span>
+                </li>
+                <li class="contacts-item" id="vk">
+                    <span class="ico">☺</span>
+                    <span class="contact">VKontakte</span>
+                </li>
+                <li class="contacts-item" id="tw">
+                    <span class="ico">☺</span>
+                    <span class="contact">Twitter</span>
+                </li>
+            </ul>
+            <div class="big-letter">
+                <span class="letter">c</span>
+                <div class="line"></div>
+            </div>
         </div>
     </section>
 </main>
