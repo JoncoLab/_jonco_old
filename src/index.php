@@ -21,8 +21,9 @@
 <main>
     <section id="start" class="content-section">
         <div class="content-block">
-            <h1 id="tagline">Do let professionals to code.</h1>
-            <div class="underline"></div>
+            <h1 id="tagline">Do let professionals to code.
+                <div class="underline"></div>
+            </h1>
         </div>
     </section>
     <section id="services" class="content-section">
@@ -48,7 +49,9 @@
                         Quisque tempus ex ut erat ornare, sit amet ultricies erat suscipit.
                     </p>
                     <p class="text-block">
-                        Suspendisse leo ligula, facilisis sed purus et, posuere dapibus turpis.
+                        Praesent eros purus, suscipit et nibh at, fermentum iaculis nibh.
+                        Quisque fringilla, nulla sit amet convallis laoreet, massa mi posuere elit, quis laoreet orci enim at purus.
+                        Quisque tempus ex ut erat ornare, sit amet ultricies erat suscipit.
                     </p>
                 </div>
             </article>

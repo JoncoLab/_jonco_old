@@ -30,32 +30,39 @@ body {
     background: {
       color: black;
     }
+    z-index: 1000;
+    box-shadow: 0 $line / 4 $line / 2 0 white;
+    transition: {
+      duration: $time;
+      timing-function: linear;
+    }
 
     #logo {
       display: block;
-      margin: 0 0 0 15%;
       padding: 0;
       width: 20%;
       align-self: center;
     }
 
     #menu {
-      margin: 0 15% 0 0;
       max-width: 60%;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
+      flex-wrap: nowrap;
 
       .menu-item {
         color: white;
-        padding: $line;
         text: {
           decoration: none;
           transform: uppercase;
         }
         font: {
           family: Helvatica, sans-serif;
+          size: 0;
         }
+        word-break: keep-all;
+        word-wrap: normal;
+        text-wrap: none;
         transition: {
           duration: $time;
           timing-function: linear;
@@ -72,18 +79,13 @@ body {
   main {
 
     #start {
-      border: 1px solid red;
-      width: 100%;
-      height: $line * 80;
       display: flex;
       align-items: center;
 
       .content-block {
-        @include contentBlock($color: transparent);
         display: flex;
         align-items: center;
-        width: 100%;
-        height: $line * 20;
+        padding: 0 15%;
         background: {
           image: url("../images/bg.png");
           position: center;
@@ -97,19 +99,148 @@ body {
           padding: 0;
           margin: 0;
           font: {
-            family: Open Sans, sans-serif;
+            family: Helvatica, sans-serif;
             size: $line * 4;
             weight: normal;
           }
 
           .underline  {
             position: absolute;
-            bottom: 0;
+            bottom: -10%;
             left: 0;
             width: $line * 8;
-            height: $line / 4;
+            height: $line / 2.5;
             background: {
               color: black;
+            }
+          }
+        }
+      }
+    }
+
+    #services {
+      width: 100%;
+
+      #description {
+        width: 100%;
+        background: {
+          color: black;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .content,
+        .caption {
+          width: 70%;
+        }
+
+        .caption {
+          margin: $line * 2 0 0 0;
+          padding: 0;
+          font: {
+            weight: normal;
+          }
+          text-align: right;
+
+          .name {
+            font: {
+              size: $line * 4;
+              family: Open Sans, sans-serif;
+            }
+            color: white;
+          }
+
+          .ico {
+            color: $main;
+            font: {
+              family: Ico;
+              size: $line * 5;
+            }
+          }
+        }
+
+        .content {
+          display: flex;
+          align-items: center;
+
+          .big-letter {
+            padding: 0 0 $line * 4 0;
+            position: relative;
+            text-align: left;
+            color: $main;
+            text: {
+              transform: uppercase;
+            }
+            font: {
+              family: 'Open Sans', sans-serif;
+              size: $line * 35;
+            }
+
+            .line {
+              position: absolute;
+              bottom: 0;
+              left: 45%;
+              width: $line / 2;
+              height: $line * 10;
+              background: {
+                color: $main;
+              }
+            }
+          }
+
+          .text {
+            display: flex;
+            flex-direction: column;
+
+            .text-block:nth-of-type(even) {
+              align-self: flex-end;
+            }
+
+            .text-block:nth-last-of-type(odd) {
+              align-self: flex-start;
+            }
+
+            .text-block {
+              flex-grow: 1;
+              color: white;
+              width: 50%;
+              font: {
+                family: Open Sans, sans-serif;
+                size: $line * 2;
+              }
+              line-height: $line * 2.5;
+            }
+          }
+        }
+
+        #visualization {
+          border: 1px solid red;
+          width: 70%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          figure {
+
+            figcaption {
+              color: white;
+              font: {
+                family: Helvatica, sans-serif;
+                size: $line * 4;
+                weight: normal;
+              }
+            }
+
+            .line {
+              background: {
+                color: white;
+              }
+            }
+
+            .ico {
+              color: white;
             }
           }
         }
