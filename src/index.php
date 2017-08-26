@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Jonco Lab - Web development</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="scripts/script.js" type="text/javascript"></script>
+    <script src="scripts/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="scripts/js/script.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
