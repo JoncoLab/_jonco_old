@@ -1,0 +1,35 @@
+{
+  "name": "joncolab.pro",
+  "version": "0.0.1",
+  "description": "jonco lsb web development page",
+  "main": "build/index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoncoLab/jonco.git"
+  },
+  "keywords": [
+    "web",
+    "development"
+  ],
+  "author": "Jonco Lab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoncoLab/jonco/issues"
+  },
+  "homepage": "https://github.com/JoncoLab/jonco#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-image": "^2.10.1",
+    "gulp-minify": "^1.0.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-zip": "^4.0.0",
+    "rimraf": "^2.6.1",
+    "vinyl-ftp": "^0.6.0"
+  }
+}

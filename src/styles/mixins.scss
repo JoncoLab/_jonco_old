@@ -1,0 +1,18 @@
+@mixin contentBlock($color: black) {
+  background: {
+    color: $color;
+  }
+  padding: 0 20%;
+}
+
+@mixin bigLetter($color: white) {
+  color: $color;
+}
+
+@mixin caption($planetColor: white) {
+
+}
+
+@mixin textBlock($color) {
+  color: $color;
+}
