@@ -18,24 +18,31 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: $line * 10;
-    padding: 0 20%;
+    height: $line * 8;
+    padding: 0 15%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: {
-      color: red;
+      color: black;
+    }
+
+    * {
+      border: 1px solid red;
     }
 
     #logo {
-      width: 20%;
+      display: block;
+      width: 15%;
+      margin: 0;
+      padding: 0;
     }
 
     #menu {
       flex-grow: 1;
 
       .menu-item {
-        padding: $line / 2 $line;
+        padding: $line / 2 0;
         color: white;
         text: {
           decoration: none;
