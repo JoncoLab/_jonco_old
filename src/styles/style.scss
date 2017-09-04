@@ -31,7 +31,6 @@ body {
       color: black;
     }
     z-index: 1000;
-    box-shadow: 0 $line / 4 0 0 white;
     transition: {
       duration: $time;
       timing-function: linear;
@@ -239,6 +238,102 @@ body {
             }
             color: white;
           }
+        }
+      }
+    }
+
+    #about {
+      width: 100%;
+      background: {
+        color: white;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      .caption {
+        @include secCap(flex-start);
+
+        .name {
+          @include capName(black);
+        }
+
+        .ico {
+          @include joncoPlanet($dark, 0 0 0 $line * 2);
+        }
+      }
+
+      .content {
+        width: 70%;
+        display: flex;
+        align-items: flex-start;
+
+        .big-letter {
+          @include bigLetter($dark);
+        }
+
+        #about-visual {
+          height: 200px;
+          width: 200px;
+          align-self: flex-end;
+          margin-bottom: 7%;
+          border: {
+            radius: 50%;
+          }
+        }
+
+        .text {
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          .text-block {
+            align-self: center;
+            color: black;
+            width: 80%;
+            font: {
+              family: $fontSansCond;
+              size: $line * 1.8;
+            }
+          }
+        }
+      }
+    }
+
+    #portfolio {
+      width: 100%;
+      background: {
+        color: black;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      .caption {
+        @include secCap(flex-end);
+
+        .name {
+          @include capName(white);
+        }
+
+        .ico {
+          @include joncoPlanet($main, 0 0 0 $line * 2);
+        }
+      }
+
+      .gallery {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          flex-basis: 20%;
+          width: 20%;
+          margin: 10% 0;
         }
       }
     }
