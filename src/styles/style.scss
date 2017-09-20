@@ -372,5 +372,65 @@ body {
         }
       }
     }
+
+    #contacts {
+      width: 100%;
+      margin: $line * 4 0 0 0;
+      background: {
+        color: black;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+      .caption {
+        @include secCap(flex-start);
+
+        .name {
+          @include capName(white);
+        }
+
+        .ico {
+          @include joncoPlanet($main, 0 0 0 $line * 2);
+        }
+      }
+
+      .content {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        * {
+          border: 1px solid red;
+        }
+
+        #feedback-form {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          width: 35%;
+          color: white;
+
+          input {
+            @include input();
+          }
+
+          #submit {
+            display: none;
+          }
+        }
+
+        #contacts-list {
+          color: white;
+        }
+
+        .big-letter {
+          @include bigLetter();
+        }
+      }
+    }
   }
 }
