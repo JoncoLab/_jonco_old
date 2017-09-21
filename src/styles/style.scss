@@ -402,20 +402,52 @@ body {
         justify-content: space-between;
         align-items: flex-start;
 
-        * {
-          border: 1px solid red;
-        }
-
         #feedback-form {
+          position: relative;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
           width: 35%;
           color: white;
+          font: {
+            family: $fontSansCond;
+            size: $line * 2.7;
+          }
 
           input {
             @include input();
+          }
+
+          textarea {
+            @include input();
+            resize: none;
+            overflow: {
+              x: hidden;
+              y: hidden;
+            }
+            min-height: $line * 8;
+          }
+
+          label[for="submit"] {
+            position: absolute;
+            bottom: -5%;
+            z-index: 10;
+            background: {
+              color: $main;
+            }
+            padding: $line / 2 $line * 4;
+            cursor: pointer;
+            transition: {
+              duration: $time / 2;
+              timing-function: linear;
+            }
+
+            &:hover {
+              background: {
+                color: darken($main, 15);
+              }
+            }
           }
 
           #submit {
@@ -425,6 +457,13 @@ body {
 
         #contacts-list {
           color: white;
+          align-self: center;
+          font: {
+            family: $fontSansCond;
+            size: $line * 2.5;
+            weight: bold;
+          }
+          list-style: none;
         }
 
         .big-letter {

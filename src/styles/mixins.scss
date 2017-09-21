@@ -67,6 +67,20 @@
 }
 
 @mixin input () {
+  border: none;
+  outline: none;
   width: 100%;
-  padding: $line * 1.5;
+  padding: $line 0 $line $line;
+  margin: $line 0;
+  font: {
+    family: $fontOpenSans;
+    size: $line * 1.6;
+  }
+
+  &.focus {
+
+    &::placeholder {
+      display: none;
+    }
+  }
 }

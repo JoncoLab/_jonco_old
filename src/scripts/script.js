@@ -14,6 +14,7 @@ var main = function () {
                 }
             }
         },
+        inputFd = $('#feedback-form input, #feedback-form textarea'),
         main = {
             box: $('main'),
             sections: {
@@ -87,6 +88,10 @@ var main = function () {
 
     responsive();
     $(window).resize(responsive);
+
+    inputFd.onfocus(function () {
+        $(this).toggleClass('focus');
+    });
 };
 
 $(document).ready(main);
