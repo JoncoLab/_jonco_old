@@ -87,6 +87,51 @@ var main = function () {
 
     responsive();
     $(window).resize(responsive);
+
+    const form = $('#feedback-form'),
+        sendMail = function (event) {
+            var name = $('#name').val(),
+                email = $('#email').val(),
+                subject = $('#subject').val(),
+                message = $('#message').val();
+
+            event.preventDefault();
+
+            $.ajax({
+                url: 'scripts/php/feedback.php',
+                data: {
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message
+                },
+                method: 'POST',
+                dataType: 'text',
+                success: function (data) {
+                    switch (data) {
+                        case 'success':
+                            alert('mail sent');
+                            break;
+                        case 'error':
+                            alert('huinya mail server');
+                            break;
+                        default:
+                            alert(data);
+                    }
+                },
+                error: function () {
+                    alert('coders are huesosi');
+                },
+                complete: function () {
+                    alert('+');
+                },
+                beforeSend: function () {
+                    alert('Start');
+                }
+            });
+        };
+
+    form.submit(sendMail);
 };
 
 $(document).ready(main);
