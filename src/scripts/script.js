@@ -1,3 +1,5 @@
+'use strict';
+
 var main = function () {
     var header = {
             box: $('header'),
@@ -88,50 +90,49 @@ var main = function () {
     responsive();
     $(window).resize(responsive);
 
-    const form = $('#feedback-form'),
-        sendMail = function (event) {
-            var name = $('#name').val(),
-                email = $('#email').val(),
-                subject = $('#subject').val(),
-                message = $('#message').val();
+    const form = $('#feedback-form');
 
-            event.preventDefault();
+    form.submit(function (event) {
+        var name = $('#name').val(),
+            email = $('#email').val(),
+            subject = $('#subject').val(),
+            message = $('#message').val();
 
-            $.ajax({
-                url: 'scripts/php/feedback.php',
-                data: {
-                    name: name,
-                    email: email,
-                    subject: subject,
-                    message: message
-                },
-                method: 'POST',
-                dataType: 'text',
-                success: function (data) {
-                    switch (data) {
-                        case 'success':
-                            alert('mail sent');
-                            break;
-                        case 'error':
-                            alert('huinya mail server');
-                            break;
-                        default:
-                            alert(data);
-                    }
-                },
-                error: function () {
-                    alert('coders are huesosi');
-                },
-                complete: function () {
-                    alert('+');
-                },
-                beforeSend: function () {
-                    alert('Start');
+        event.preventDefault();
+
+        $.ajax({
+            url: 'scripts/php/feedback.php',
+            method: 'POST',
+            data: {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            },
+            dataType: 'text',
+            success: function (data) {
+                switch (data) {
+                    case 'success':
+                        alert('mail sent');
+                        break;
+                    case 'error':
+                        alert('huinya mail server');
+                        break;
+                    default:
+                        alert(data);
                 }
-            });
-        };
-
-    form.submit(sendMail);
+            },
+            error: function () {
+                alert('coders are huesosi');
+            },
+            complete: function () {
+                alert('+');
+            },
+            beforeSend: function () {
+                alert('Start');
+            }
+        });
+    });
 };
 
 $(document).ready(main);
