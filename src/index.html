@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Jonco Lab - Web development</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/App.js" type="text/javascript"></script>
 </head>
 <body>
 <video poster="images/bg-2.png" id="bgvid" playsinline autoplay muted loop>
@@ -121,7 +120,7 @@
         </h2>
         <div class="content">
             <form id="feedback-form">
-                <label for="name">Have some questions? Send us an email:</label>
+                <label for="name">Send us an email:</label>
                 <input id="name" name="name" placeholder="Your name" required>
                 <input type="email" name="email" id="email" placeholder="Your Email" required>
                 <input name="subject" id="subject" placeholder="Subject" required>
@@ -154,34 +153,35 @@
         </div>
     </section>
 </main>
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-    <script>
-        var config = {
-            apiKey: "AIzaSyAmsgseYaZreSHZCpfiyRHGGvb-15lgPyw",
-            authDomain: "joncolab-pro.firebaseapp.com",
-            databaseURL: "https://joncolab-pro.firebaseio.com",
-            projectId: "joncolab-pro",
-            storageBucket: "joncolab-pro.appspot.com",
-            messagingSenderId: "271754923803"
-        };
-        firebase.initializeApp(config);
-    </script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-1836167343820557",
-            enable_page_level_ads: true });
-    </script>
-    <script src="scripts/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="scripts/js/script.js" type="text/javascript"></script>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105840000-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)};
-        gtag('js', new Date());
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script>
+    var config = {
+        apiKey: "AIzaSyAmsgseYaZreSHZCpfiyRHGGvb-15lgPyw",
+        authDomain: "joncolab-pro.firebaseapp.com",
+        databaseURL: "https://joncolab-pro.firebaseio.com",
+        projectId: "joncolab-pro",
+        storageBucket: "joncolab-pro.appspot.com",
+        messagingSenderId: "271754923803"
+    };
+    firebase.initializeApp(config);
+</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-1836167343820557",
+        enable_page_level_ads: true });
+</script>
+<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105840000-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
 
-        gtag('config', 'UA-105840000-1');
-    </script>
+    gtag('config', 'UA-105840000-1');
+</script>
+<script src="scripts/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="scripts/js/script.js" type="text/javascript"></script>
+<script src="scripts/js/firebase-script.js" type="text/javascript"></script>
 </body>
 </html>
