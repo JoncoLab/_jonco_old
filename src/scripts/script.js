@@ -1,7 +1,7 @@
 'use strict';
 
-var main = function () {
-    var header = {
+const main = function () {
+    const header = {
             box: $('header'),
             logo: $('#logo'),
             menu: {
@@ -26,7 +26,7 @@ var main = function () {
                 portfolio: $('#portfolio'),
                 contacts: $('#contacts'),
                 getContentBlocks: function (section) {
-                    var target = section.children('.content-block');
+                    let target = section.children('.content-block');
                     return {
                         box: $(target),
                         caption: target.children('.caption'),
@@ -40,14 +40,14 @@ var main = function () {
             /**
              *  Common settings
              */
-            var fullHeight = $(window).height(),
+            let fullHeight = $(window).height(),
                 fullWidth = $(window).width(),
                 line = function (multiplier) {
-                    var singleLine = fullHeight / 40;
+                    let singleLine = fullHeight / 40;
                     return (parseFloat(multiplier) * singleLine) + 'px';
                 },
                 vert = function (multiplier) {
-                    var singleVert = fullWidth / 20;
+                    let singleVert = fullWidth / 20;
                     return (parseFloat(multiplier) * singleVert) + 'px';
                 };
             /**
@@ -73,7 +73,8 @@ var main = function () {
                 'width': fullWidth,
                 'height': fullHeight
             });
-            var startContent = main.sections.getContentBlocks(main.sections.start);
+
+            let startContent = main.sections.getContentBlocks(main.sections.start);
             startContent.box.css({
                 'height': line(12.5),
                 'width': fullWidth
@@ -85,23 +86,19 @@ var main = function () {
                 'height': line(0.2),
                 'width': vert(1.25)
             });
-        };
+        },
+        feedbackForm = main.sections.contacts.find('#feedback-form');
 
-    responsive();
-    $(window).resize(responsive);
-
-    const form = $('#feedback-form');
-
-    form.submit(function (event) {
-        var name = $('#name').val(),
-            email = $('#email').val(),
-            subject = $('#subject').val(),
-            message = $('#message').val();
+    feedbackForm.submit(function (event) {
+        let form = $(this),
+            name = form.find('#name').val(),
+            email = form.find('#email').val(),
+            subject = form.find('#subject').val(),
+            message = form.find('#message').val();
 
         event.preventDefault();
-
         $.ajax({
-            url: 'scripts/php/feedback.php',
+            url: "https://us-central1-joncolab-pro.cloudfunctions.net/sendMail",
             method: 'POST',
             data: {
                 name: name,
@@ -110,29 +107,23 @@ var main = function () {
                 message: message
             },
             dataType: 'text',
-            success: function (data) {
-                switch (data) {
-                    case 'success':
-                        alert('mail sent');
-                        break;
-                    case 'error':
-                        alert('huinya mail server');
-                        break;
-                    default:
-                        alert(data);
-                }
+            beforeSend: function () {
+                alert(name + "\r\n" + email + "\r\n" + subject + "\r\n" + message);
             },
-            error: function () {
-                alert('coders are huesosi');
+            success: function (dat) {
+                alert("Success!\r\nServer responded:\r\n" + dat);
+            },
+            error: function (err) {
+                alert("ERROR!\r\nServer responded:\r\n" + err.name + ' - ' + err.message);
             },
             complete: function () {
-                alert('+');
-            },
-            beforeSend: function () {
-                alert('Start');
+                alert("completed");
             }
         });
     });
+
+    responsive();
+    $(window).resize(responsive);
 };
 
 $(document).ready(main);

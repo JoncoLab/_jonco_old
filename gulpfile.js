@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require("gulp"),
+const gulp = require("gulp"),
     autoPrefix = require("gulp-autoprefixer"),
     cssComb = require("gulp-csscomb"),
     image = require("gulp-image"),
@@ -13,16 +13,11 @@ var gulp = require("gulp"),
             html: {
                 en: [
                     'src/*.html',
-                    'src/*.php',
                     'src/*.ico'
                 ],
-                ru: [
-                    'src/ru/*.html',
-                    'src/ru/*.php'
-                ]
+                ru: 'src/ru/*.html',
             },
             css: 'src/styles/style.scss',
-            php: 'src/scripts/*.php',
             img: 'src/images/*.png',
             svg: 'src/svg/*.svg',
             fonts: 'src/fonts/*.ttf',
@@ -41,11 +36,10 @@ var gulp = require("gulp"),
                 ru: 'build/ru/'
             },
             css: 'build/styles/',
-            php: 'build/scripts/php/',
             img: 'build/images/',
             svg: 'build/svg/',
             fonts: 'build/fonts/',
-            js: 'build/scripts/js/',
+            js: 'build/scripts/',
             zip: 'zip/',
             video: 'build/video/'
         },
@@ -53,16 +47,11 @@ var gulp = require("gulp"),
         watch: {
             pages: [
                 'src/*.html',
-                'src/*.php',
                 'src/*.ico',
                 'src/ru/*.html',
-                'src/ru/*.php',
                 'src/fonts/*.ttf'
             ],
-            scripts: [
-                'src/scripts/*.php',
-                'src/scripts/*.js'
-            ],
+            scripts: 'src/scripts/*.js',
             styles: 'src/styles/*.scss',
             images: 'src/images/*.png',
             video: 'src/video/*',
@@ -80,13 +69,6 @@ gulp.task('html:build', function () {
     gulp.src(path.src.html.ru)
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html.ru));
-});
-
-//Збірка php
-gulp.task('php:build', function () {
-    gulp.src(path.src.php)
-        .pipe(rigger())
-        .pipe(gulp.dest(path.build.php));
 });
 
 //Збірка JS
@@ -145,7 +127,6 @@ gulp.task('project:build', [
     'css:build',
     'img:build',
     'svg:build',
-    'php:build',
     'fonts:build',
     'video:build',
     'zip:build'
@@ -157,10 +138,7 @@ gulp.task('watch', function () {
         'fonts:build'
     ]);
     gulp.watch(path.watch.styles, ['css:build']);
-    gulp.watch(path.watch.scripts, [
-        'js:build',
-        'php:build'
-    ]);
+    gulp.watch(path.watch.scripts, ['js:build']);
     gulp.watch(path.watch.images, ['img:build']);
     gulp.watch(path.watch.svg, ['svg:build']);
     gulp.watch(path.watch.video, ['video:build']);
