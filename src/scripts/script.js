@@ -14,7 +14,6 @@ var main = function () {
                 }
             }
         },
-        inputFd = $('#feedback-form input, #feedback-form textarea'),
         main = {
             box: $('main'),
             sections: {
@@ -56,7 +55,7 @@ var main = function () {
                 'min-height': line(5)
             });
             header.menu.items.all.css({
-                'font-size': line(1),
+                'font-size': line(1,2),
                 'padding': fullWidth <= 640 ? line(0.5) : (fullWidth >= 1920 ? line(0.5) : line(1))
             });
             header.logo.css({
@@ -88,10 +87,6 @@ var main = function () {
 
     responsive();
     $(window).resize(responsive);
-
-    inputFd.onfocus(function () {
-        $(this).toggleClass('focus');
-    });
 };
 
 $(document).ready(main);

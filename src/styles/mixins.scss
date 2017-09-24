@@ -76,11 +76,4 @@
     family: $fontOpenSans;
     size: $line * 1.6;
   }
-
-  &.focus {
-
-    &::placeholder {
-      display: none;
-    }
-  }
 }

@@ -48,7 +48,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 15%;
+    height: $line * 7.5;
     display: flex;
     justify-content: space-between;
     background: {
@@ -294,7 +294,7 @@ body {
         align-items: flex-start;
 
         .big-letter {
-          @include bigLetter($dark);
+          @include bigLetter($dark, $dark);
         }
 
         #about-visual {
@@ -415,12 +415,20 @@ body {
             size: $line * 2.7;
           }
 
-          input {
+          input,
+          textarea {
             @include input();
+            transition: {
+              duration: $time;
+              timing-function: linear;
+            }
+
+            &:focus {
+              box-shadow: inset 0 0 0 3px $main;
+            }
           }
 
           textarea {
-            @include input();
             resize: none;
             overflow: {
               x: hidden;

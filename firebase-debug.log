@@ -1,0 +1,62 @@
+[debug] [2017-09-21T18:34:17.198Z] ----------------------------------------------------------------------
+[debug] [2017-09-21T18:34:17.201Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sher\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2017-09-21T18:34:17.201Z] CLI Version:   3.10.1
+[debug] [2017-09-21T18:34:17.201Z] Platform:      win32
+[debug] [2017-09-21T18:34:17.201Z] Node Version:  v8.1.2
+[debug] [2017-09-21T18:34:17.202Z] Time:          Thu Sep 21 2017 21:34:17 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-21T18:34:17.202Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-21T18:34:17.232Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-21T18:34:17.232Z] > authorizing via signed-in user
+[debug] [2017-09-21T18:34:17.235Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-09-21T18:34:17.235Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/eRnAhZF-hOEdmmAO69B8g_ZBDZTv5hRvMmFjOJwwibWpqRfF90o1YbO4ByKUzaLj',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Sep 21 2017 21:34:17 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-21T18:34:17.539Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-21T18:34:17.551Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/joncolab-pro  
+ Thu Sep 21 2017 21:34:17 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-21T18:34:18.465Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-21T18:34:18.465Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/joncolab-pro/tokens  
+ Thu Sep 21 2017 21:34:18 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-21T18:34:19.288Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'joncolab-pro'...
+[info] 
+[info] i  deploying functions, hosting
+[debug] [2017-09-21T18:34:21.792Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "firebase-admin": "~5.2.1",
+    "firebase-functions": "^0.6.2"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-09-21T18:34:21.795Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/joncolab-pro?view=CONSUMER_VIEW  
+ Thu Sep 21 2017 21:34:21 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-21T18:34:21.795Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/joncolab-pro?view=CONSUMER_VIEW  
+ Thu Sep 21 2017 21:34:21 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-21T18:34:23.075Z] <<< HTTP RESPONSE 200
+[info] +  runtimeconfig: all necessary APIs are enabled
+[debug] [2017-09-21T18:34:23.116Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2017-09-21T18:34:23.118Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/joncolab-pro  
+ Thu Sep 21 2017 21:34:23 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-21T18:34:23.119Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/joncolab-pro/apiKeys  
+ Thu Sep 21 2017 21:34:23 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-21T18:34:24.370Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-21T18:34:24.447Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2017-09-21T18:34:52.689Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/joncolab-pro/configs  
+ Thu Sep 21 2017 21:34:52 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-21T18:34:53.217Z] <<< HTTP RESPONSE 200
+[info] i  hosting: preparing build directory for upload...
+[debug] [2017-09-21T18:34:54.629Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/joncolab-pro/uploads/-Ku_i1q7Ic9H7rlq8Esz?fileCount=22&message=  
+ Thu Sep 21 2017 21:34:54 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-21T18:35:09.196Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-21T18:35:09.197Z] [hosting] .tgz uploaded successfully, waiting for extraction
