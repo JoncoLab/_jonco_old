@@ -12,7 +12,7 @@ $email = $_POST["email"];
 $subject = $_POST["subject"];
 $message = $_POST["message"];
 $to = "joncolab@gmail.com";
-$headers = "From: " . $name . " <" . $email . ">";
+$headers = "From: " . $name . " <" . $email . ">;";
 
 if (mail($to, $subject, $message, $headers)) {
     echo 'success';

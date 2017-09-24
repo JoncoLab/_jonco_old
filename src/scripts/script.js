@@ -98,7 +98,7 @@ var main = function () {
             event.preventDefault();
 
             $.ajax({
-                url: '../php/feedback.php',
+                url: 'scripts/php/feedback.php',
                 data: {
                     name: name,
                     email: email,
@@ -116,7 +116,7 @@ var main = function () {
                             alert('huinya mail server');
                             break;
                         default:
-                            alert('huinya zapros');
+                            alert(data);
                     }
                 },
                 error: function () {
