@@ -7,9 +7,7 @@ var gulp = require("gulp"),
     compileSass = require("gulp-sass"),
     rigger = require("gulp-rigger"),
     rimraf = require("rimraf"),
-    jsMinify = require("gulp-minify"),
     zip = require("gulp-zip"),
-    ftp = require("vinyl-ftp"),
     path = {
         src: {
             html: {
@@ -71,38 +69,16 @@ var gulp = require("gulp"),
             svg: 'src/svg/*.svg'
         },
 
-        ftp: {
-            html: {
-                en: '/',
-                ru: '/ru/'
-            },
-            css: '/styles/',
-            php: '/scripts/php/',
-            img: '/images/',
-            svg: '/svg/',
-            fonts: '/fonts/',
-            js: '/scripts/js/',
-            video: '/video/'
-        },
-
         clean: 'build*'
-    },
-    connectToFtp = ftp.create({
-        host: 'joncolab.ftp.ukraine.com.ua',
-        user: 'joncolab_ftp',
-        pass: 'c9ZXk9B9l1',
-        parallel: 20
-    });
+    };
 
 //Збірка html
 gulp.task('html:build', function () {
     gulp.src(path.src.html.en)
         .pipe(rigger())
-        .pipe(connectToFtp.dest(path.ftp.html.en))
         .pipe(gulp.dest(path.build.html.en));
     gulp.src(path.src.html.ru)
         .pipe(rigger())
-        .pipe(connectToFtp.dest(path.ftp.html.ru))
         .pipe(gulp.dest(path.build.html.ru));
 });
 
@@ -110,22 +86,12 @@ gulp.task('html:build', function () {
 gulp.task('php:build', function () {
     gulp.src(path.src.php)
         .pipe(rigger())
-        .pipe(connectToFtp.newer(path.ftp.php))
-        .pipe(connectToFtp.dest(path.ftp.php))
         .pipe(gulp.dest(path.build.php));
 });
 
 //Збірка JS
 gulp.task('js:build', function () {
     gulp.src(path.src.js)
-        .pipe(connectToFtp.newer(path.ftp.js))
-        // .pipe(jsMinify({
-        //     ext: {
-        //         min: '.js'
-        //     },
-        //     noSource: '*.js'
-        // }))
-        .pipe(connectToFtp.dest(path.ftp.js))
         .pipe(gulp.dest(path.build.js));
 });
 
@@ -138,40 +104,30 @@ gulp.task('css:build', function () {
             browsers: ['last 40 versions', '> 90%'],
             remove: true
         }))
-        .pipe(connectToFtp.newer(path.ftp.css))
-        .pipe(connectToFtp.dest(path.ftp.css))
         .pipe(gulp.dest(path.build.css));
 });
 
 //Збірка картинок
 gulp.task('img:build', function () {
     gulp.src(path.src.img)
-        .pipe(connectToFtp.newer(path.ftp.img))
         .pipe(image())
-        .pipe(connectToFtp.dest(path.ftp.img))
         .pipe(gulp.dest(path.build.img));
 });
 
 gulp.task('svg:build', function () {
     gulp.src(path.src.svg)
-        .pipe(connectToFtp.newer(path.ftp.svg))
-        .pipe(connectToFtp.dest(path.ftp.svg))
         .pipe(gulp.dest(path.build.svg));
 });
 
 //Збірка відео
 gulp.task('video:build', function () {
     gulp.src(path.src.video)
-        .pipe(connectToFtp.newer(path.ftp.video))
-        .pipe(connectToFtp.dest(path.ftp.video))
         .pipe(gulp.dest(path.build.video));
 });
 
 //Збірка шрифтів
 gulp.task('fonts:build', function () {
     gulp.src(path.src.fonts)
-        .pipe(connectToFtp.newer(path.ftp.fonts))
-        .pipe(connectToFtp.dest(path.ftp.fonts))
         .pipe(gulp.dest(path.build.fonts));
 });
 
@@ -191,7 +147,8 @@ gulp.task('project:build', [
     'svg:build',
     'php:build',
     'fonts:build',
-    'video:build'
+    'video:build',
+    'zip:build'
 ]);
 
 gulp.task('watch', function () {
