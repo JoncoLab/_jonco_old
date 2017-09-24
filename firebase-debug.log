@@ -1,47 +1,36 @@
-[debug] [2017-09-24T10:30:51.371Z] ----------------------------------------------------------------------
-[debug] [2017-09-24T10:30:51.378Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Saladin\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
-[debug] [2017-09-24T10:30:51.380Z] CLI Version:   3.12.0
-[debug] [2017-09-24T10:30:51.380Z] Platform:      win32
-[debug] [2017-09-24T10:30:51.380Z] Node Version:  v6.11.3
-[debug] [2017-09-24T10:30:51.381Z] Time:          Sun Sep 24 2017 13:30:51 GMT+0300 (Финляндия (лето))
-[debug] [2017-09-24T10:30:51.381Z] ----------------------------------------------------------------------
+[debug] [2017-09-24T22:07:45.780Z] ----------------------------------------------------------------------
+[debug] [2017-09-24T22:07:45.783Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Saladin\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-09-24T22:07:45.783Z] CLI Version:   3.12.0
+[debug] [2017-09-24T22:07:45.783Z] Platform:      win32
+[debug] [2017-09-24T22:07:45.783Z] Node Version:  v6.11.3
+[debug] [2017-09-24T22:07:45.784Z] Time:          Mon Sep 25 2017 01:07:45 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-24T22:07:45.784Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-09-24T10:30:51.402Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-09-24T10:30:51.402Z] > authorizing via signed-in user
-[debug] [2017-09-24T10:30:51.405Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/joncolab-pro  
- Sun Sep 24 2017 13:30:51 GMT+0300 (Финляндия (лето))
-[debug] [2017-09-24T10:30:52.263Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-24T10:30:52.266Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/joncolab-pro/tokens  
- Sun Sep 24 2017 13:30:52 GMT+0300 (Финляндия (лето))
-[debug] [2017-09-24T10:30:52.941Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-24T22:07:45.800Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-24T22:07:45.800Z] > authorizing via signed-in user
+[debug] [2017-09-24T22:07:45.802Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-09-24T22:07:45.803Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/OAUknRNTJKNCiFbOvc35bxARZSB-AIy2hW8yQIZqujs',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Sep 25 2017 01:07:45 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-24T22:07:46.011Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-24T22:07:46.103Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/joncolab-pro  
+ Mon Sep 25 2017 01:07:46 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-24T22:07:46.951Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-24T22:07:46.952Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/joncolab-pro/tokens  
+ Mon Sep 25 2017 01:07:46 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-24T22:07:47.660Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Deploying to 'joncolab-pro'...
+[info] === Serving from 'C:\Users\Saladin\work\projects\jonco'...
 [info] 
-[info] i  deploying functions, hosting
-[debug] [2017-09-24T10:30:54.656Z] > [functions] package.json contents: {
-  "name": "functions",
-  "description": "Cloud Functions for Firebase",
-  "dependencies": {
-    "aws-sdk": "^2.122.0",
-    "firebase-admin": "~5.2.1",
-    "firebase-functions": "^0.6.2",
-    "nodemailer": "^4.1.0"
-  },
-  "private": true
-}
-[info] i  functions: ensuring necessary APIs are enabled...
-[info] i  runtimeconfig: ensuring necessary APIs are enabled...
-[debug] [2017-09-24T10:30:54.662Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/joncolab-pro?view=CONSUMER_VIEW  
- Sun Sep 24 2017 13:30:54 GMT+0300 (Финляндия (лето))
-[debug] [2017-09-24T10:30:54.663Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/joncolab-pro?view=CONSUMER_VIEW  
- Sun Sep 24 2017 13:30:54 GMT+0300 (Финляндия (лето))
-[debug] [2017-09-24T10:30:55.932Z] <<< HTTP RESPONSE 200
-[info] +  runtimeconfig: all necessary APIs are enabled
-[debug] [2017-09-24T10:30:55.953Z] <<< HTTP RESPONSE 200
-[info] +  functions: all necessary APIs are enabled
-[debug] [2017-09-24T10:30:55.956Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/joncolab-pro  
- Sun Sep 24 2017 13:30:55 GMT+0300 (Финляндия (лето))
-[debug] [2017-09-24T10:30:55.956Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/joncolab-pro/apiKeys  
- Sun Sep 24 2017 13:30:55 GMT+0300 (Финляндия (лето))
-[debug] [2017-09-24T10:30:56.945Z] <<< HTTP RESPONSE 200
-[debug] [2017-09-24T10:30:57.033Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-24T22:07:47.664Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/joncolab-pro  
+ Mon Sep 25 2017 01:07:47 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-24T22:07:48.594Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-24T22:07:48.594Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/271754923803/clients/_:getWebAppConfig  
+ Mon Sep 25 2017 01:07:48 GMT+0300 (Финляндия (лето))
+[debug] [2017-09-24T22:07:49.086Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
+

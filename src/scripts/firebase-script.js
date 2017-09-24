@@ -1,15 +1,22 @@
 const config = {
     apiKey: "AIzaSyAmsgseYaZreSHZCpfiyRHGGvb-15lgPyw",
-    authDomain: "joncolab-pro.firebaseapp.com",
-    databaseURL: "https://joncolab.pro",
+    authDomain: "joncolab.pro",
+    databaseURL: "https://joncolab-pro.firebaseio.com",
     projectId: "joncolab-pro",
     storageBucket: "joncolab-pro.appspot.com",
     messagingSenderId: "271754923803"
 };
 firebase.initializeApp(config);
+const db = firebase.database();
 
 firebase.auth().signInAnonymously().catch(function(error) {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorCode + ' - ' + errorMessage);
+    alert('Auth failed because of error ' + error.code + ' (' + error.message + ')');
+});
+
+firebase.auth().onAuthStateChanged(function (user) {
+    const post = {
+        "User ID": user.uid,
+        "Date": new Date("DD.MM.YYYYTHH:MM:SSZ")
+    }
+    db.ref("users/")
 });
