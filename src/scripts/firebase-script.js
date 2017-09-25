@@ -15,8 +15,9 @@ firebase.auth().signInAnonymously().catch(function(error) {
 
 firebase.auth().onAuthStateChanged(function (user) {
     const post = {
-        "User ID": user.uid,
+        "User Info": user.toJSON(),
         "Date": new Date("DD.MM.YYYYTHH:MM:SSZ")
-    }
-    db.ref("users/")
+    },
+    id = user.uid;
+    db.ref("users/" + id).set(post);
 });
