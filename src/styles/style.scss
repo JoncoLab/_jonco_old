@@ -252,7 +252,13 @@ body {
           }
 
           .ico {
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: {
+              family: IcoV2;
+              size: $line * 5;
+            }
             width: $line * 10;
             height: $line * 10;
             border: {
@@ -473,6 +479,37 @@ body {
             weight: bold;
           }
           list-style: none;
+
+          .contacts-item {
+            margin: $line * 2 0;
+            transition: {
+              duration: $time;
+              timing-function: linear;
+            }
+            cursor: pointer;
+
+            .ico {
+              padding: 0 $line * 2 0 0;
+              color: white;
+              font: {
+                family: IcoV2;
+                weight: 100;
+                size: $line * 3.5;
+              }
+              transition: {
+                duration: $time;
+                timing-function: linear;
+              }
+            }
+
+            &:hover {
+              color: $main;
+
+              .ico {
+                color: $main;
+              }
+            }
+          }
         }
 
         .big-letter {
