@@ -7,7 +7,7 @@
     display: inline-block;
     font: {
       family: $fontOpenSans;
-      size: $line * 35;
+      size: 20em;
     }
     color: $color;
     line-height: 1;
@@ -35,7 +35,7 @@
 @mixin capName ($color: #3300ff) {
   color: $color;
   font: {
-    size: $line * 5;
+    size: 1.8em;
     family: $fontSansCond;
     weight: normal;
   }
@@ -49,20 +49,42 @@
   margin: $amount;
   color: $color;
   font: {
-    size: $line * 5;
+    size: 1.8em;
     family: Ico;
     weight: normal;
   }
 }
 
-@mixin textBlock($color) {
-  color: $color;
-}
-
 @mixin noScroll() {
   &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
+    position: absolute;
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.7);
+    background: {
+      color: darken(white, 10);
+    }
+
+    &:hover {
+     background: {
+        color: darken(white, 25);
+      }
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.7);
+    background: {
+      color: desaturate($main, 15);
+    }
+
+    &:hover {
+      background: {
+        color: darken($main, 10);
+      }
+    }
   }
 }
 
@@ -74,6 +96,6 @@
   margin: $line 0;
   font: {
     family: $fontOpenSans;
-    size: $line * 1.6;
+    size: 0.6em;
   }
 }

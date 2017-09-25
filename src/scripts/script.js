@@ -57,7 +57,6 @@ const main = function () {
                 'min-height': line(5)
             });
             header.menu.items.all.css({
-                'font-size': line(1,2),
                 'padding': fullWidth <= 640 ? line(0.5) : (fullWidth >= 1920 ? line(0.5) : line(1))
             });
             header.logo.css({
@@ -78,9 +77,6 @@ const main = function () {
             startContent.box.css({
                 'height': line(12.5),
                 'width': fullWidth
-            });
-            startContent.tagLine.css({
-                'font-size': line(2.5)
             });
             startContent.tagLine.children('.underline').css({
                 'height': line(0.2),
