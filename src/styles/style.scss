@@ -311,12 +311,22 @@ body {
         }
 
         #about-visual {
-          height: 200px;
-          width: 200px;
+          position: relative;
+          border: 1px solid red;
+          height: $line * 40;
+          width: 100%;
           align-self: center;
-          margin-bottom: 7%;
-          border: {
-            radius: 50%;
+
+          img {
+            position: absolute;
+            width: 20%;
+
+            @for $i from 1 through 10 {
+              &:nth-of-type(#{$i}) {
+                top: 10% * $i;
+                left: 15% * $i;
+              }
+            }
           }
         }
 
